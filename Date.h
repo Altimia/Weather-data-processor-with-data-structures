@@ -1,3 +1,5 @@
+#include <iostream>
+
 class Date
 {
 private:
@@ -10,14 +12,29 @@ public:
     Date(int d, int m, int y) : day(d), month(m), year(y) {}
 
     // public member functions to access the day, month, and year member variables
-    int getDay() { return day; }
-    int getMonth() { return month; }
-    int getYear() { return year; }
+    int getDay() const { return day; }
+    int getMonth() const { return month; }
+    int getYear() const { return year; }
 
     // public member functions to modify the day, month, and year member variables
     void setDay(int d) { day = d; }
     void setMonth(int m) { month = m; }
     void setYear(int y) { year = y; }
+
+    // input and output operators
+    friend std::istream& operator>>(std::istream& in, Date& date);
+    friend std::ostream& operator<<(std::ostream& out, const Date& date);
 };
 
-#endif // DATE_H
+std::istream& operator>>(std::istream& in, Date& date)
+{
+    char c;
+    in >> date.day >> c >> date.month >> c >> date.year;
+    return in;
+}
+
+std::ostream& operator<<(std::ostream& out, const Date& date)
+{
+    out << date.day << "/" << date.month << "/" << date.year;
+    return out;
+}

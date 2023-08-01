@@ -27,4 +27,7 @@ public:
   void setAirTemp(double at) { airTemp = at; }
 };
 
+std::ostream& operator<<(std::ostream& os, const WindLog& wl);
+std::istream& operator>>(std::istream& is, WindLog& wl);
+
 #endif // WINDLOG_H
