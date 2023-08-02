@@ -8,6 +8,9 @@ private:
     int year;  // year (e.g. 2021)
 
 public:
+    // default constructor
+    Date() : day(1), month(1), year(2000) {}
+
     // constructor that takes three integer arguments: day, month, and year
     Date(int d, int m, int y);
 
