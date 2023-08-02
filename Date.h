@@ -9,32 +9,19 @@ private:
 
 public:
     // constructor that takes three integer arguments: day, month, and year
-    Date(int d, int m, int y) : day(d), month(m), year(y) {}
+    Date(int d, int m, int y);
 
     // public member functions to access the day, month, and year member variables
-    int getDay() const { return day; }
-    int getMonth() const { return month; }
-    int getYear() const { return year; }
+    int getDay() const;
+    int getMonth() const;
+    int getYear() const;
 
     // public member functions to modify the day, month, and year member variables
-    void setDay(int d) { day = d; }
-    void setMonth(int m) { month = m; }
-    void setYear(int y) { year = y; }
+    void setDay(int d);
+    void setMonth(int m);
+    void setYear(int y);
 
-    // input and output operators
-    friend std::istream& operator>>(std::istream& in, Date& date);
-    friend std::ostream& operator<<(std::ostream& out, const Date& date);
 };
-
-std::istream& operator>>(std::istream& in, Date& date)
-{
-    char c;
-    in >> date.day >> c >> date.month >> c >> date.year;
-    return in;
-}
-
-std::ostream& operator<<(std::ostream& out, const Date& date)
-{
-    out << date.day << "/" << date.month << "/" << date.year;
-    return out;
-}
+// input and output operators
+std::ostream& operator<<(std::ostream& out, const Date& date);
+std::istream& operator>>(std::istream& in, Date& date);
