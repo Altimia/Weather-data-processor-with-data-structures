@@ -63,7 +63,38 @@ void handleMenuOption(int option, const Vector<WindLog>& data)
 
 void calculateAverageWindSpeedAndAirTemp(const Vector<WindLog>& data)
 {
-    // TODO: Implement this function
+    int month, year;
+    std::cout << "Enter month (1-12): ";
+    std::cin >> month;
+    std::cout << "Enter year: ";
+    std::cin >> year;
+
+    double totalWindSpeed = 0.0;
+    double totalAirTemp = 0.0;
+    int count = 0;
+
+    for (int i = 0; i < data.Size(); i++)
+    {
+        if (data[i].getDate().getMonth() == month && data[i].getDate().getYear() == year)
+        {
+            totalWindSpeed += data[i].getWindSpeed();
+            totalAirTemp += data[i].getAirTemp();
+            count++;
+        }
+    }
+
+    if (count > 0)
+    {
+        double averageWindSpeed = totalWindSpeed / count;
+        double averageAirTemp = totalAirTemp / count;
+
+        std::cout << "Average wind speed for " << month << "/" << year << ": " << averageWindSpeed << "\n";
+        std::cout << "Average air temperature for " << month << "/" << year << ": " << averageAirTemp << "\n";
+    }
+    else
+    {
+        std::cout << "No data for " << month << "/" << year << ".\n";
+    }
 }
 
 void calculateAverageWindSpeedAndAirTempForYear(const Vector<WindLog>& data)
