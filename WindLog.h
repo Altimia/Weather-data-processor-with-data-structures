@@ -14,6 +14,7 @@ private:
   double airTemp;
 
 public:
+  WindLog();
   WindLog(Date d, Time t, double ws, double sr, double at);
   Date getDate() const;
   Time getTime() const;

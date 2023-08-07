@@ -3,6 +3,10 @@
 
 using namespace std;
 
+// Default constructor
+WindLog::WindLog()
+    : date(Date()), time(Time()), windSpeed(0.0), solarRad(0.0), airTemp(0.0) {}
+
 // WindLog constructor with initialization list
 WindLog::WindLog(Date d, Time t, double ws, double sr, double at)
     : date(d), time(t), windSpeed(ws), solarRad(sr), airTemp(at) {}
