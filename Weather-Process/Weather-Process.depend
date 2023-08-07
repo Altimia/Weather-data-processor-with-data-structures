@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1690981123 source:c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\datetest.cpp
+	<iostream>
+	"Date.h"
+
+1691412786 c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\date.h
+	<iostream>
+
+1690979904 source:c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\main.cpp
+
+1690979620 source:c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\time.cpp
+	"Time.h"
+
+1690979583 c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\time.h
+	<stdexcept>
+	<iostream>
+
