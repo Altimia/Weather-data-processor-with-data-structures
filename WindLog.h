@@ -15,11 +15,11 @@ private:
 
 public:
   WindLog(Date d, Time t, double ws, double sr, double at);
-  Date getDate();
-  Time getTime();
-  double getWindSpeed();
-  double getSolarRad();
-  double getAirTemp();
+  Date getDate() const;
+  Time getTime() const;
+  double getWindSpeed() const;
+  double getSolarRad() const;
+  double getAirTemp() const;
   void setDate(Date d);
   void setTime(Time t);
   void setWindSpeed(double ws);
