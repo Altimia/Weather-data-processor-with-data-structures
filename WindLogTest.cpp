@@ -16,7 +16,7 @@ int main() {
 
     // test setter methods
     wl.setDate(Date(2022, 10, 2));
-    wl.setTime(Time(13, 30, 0));
+    wl.setTime(Time(13, 30));
     wl.setWindSpeed(15.0);
     wl.setSolarRad(300.0);
     wl.setAirTemp(30.0);
