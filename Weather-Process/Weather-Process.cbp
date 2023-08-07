@@ -31,6 +31,40 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../Date.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="../Date.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../DateTest.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="../Time.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="../Time.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../TimeTest.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="../Vector.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../WindLog.cpp" />
+		<Unit filename="../WindLog.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../WindLogTest.cpp" />
+		<Unit filename="../main.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
