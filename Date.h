@@ -9,7 +9,7 @@ private:
 
 public:
     // default constructor
-    Date() : day(1), month(1), year(2000) {}
+    Date();
 
     // constructor that takes three integer arguments: day, month, and year
     Date(int d, int m, int y);
