@@ -8,27 +8,27 @@ WindLog::WindLog(Date d, Time t, double ws, double sr, double at)
     : date(d), time(t), windSpeed(ws), solarRad(sr), airTemp(at) {}
 
 // Getter methods
-Date WindLog::getDate()
+Date WindLog::getDate() const
 {
     return date;
 }
 
-Time WindLog::getTime()
+Time WindLog::getTime() const
 {
     return time;
 }
 
-double WindLog::getWindSpeed()
+double WindLog::getWindSpeed() const
 {
     return windSpeed;
 }
 
-double WindLog::getSolarRad()
+double WindLog::getSolarRad() const
 {
     return solarRad;
 }
 
-double WindLog::getAirTemp()
+double WindLog::getAirTemp() const
 {
     return airTemp;
 }
