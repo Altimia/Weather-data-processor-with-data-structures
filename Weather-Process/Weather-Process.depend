@@ -22,3 +22,11 @@
 1690979322 source:c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\date.cpp
 	"Date.h"
 
+1691414089 source:c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\windlog.cpp
+	<iostream>
+	"WindLog.h"
+
+1691413940 c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\windlog.h
+	"Date.h"
+	"Time.h"
+
