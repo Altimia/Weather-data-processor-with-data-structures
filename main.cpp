@@ -112,7 +112,40 @@ void calculateAverageWindSpeedAndAirTemp(const Vector<WindLog>& data)
 
 void calculateAverageWindSpeedAndAirTempForYear(const Vector<WindLog>& data)
 {
-    // TODO: Implement this function
+    int year;
+    std::cout << "Enter year: ";
+    std::cin >> year;
+
+    double totalWindSpeed[12] = {0.0};
+    double totalAirTemp[12] = {0.0};
+    int count[12] = {0};
+
+    for (int i = 0; i < data.Size(); i++)
+    {
+        if (data[i].getDate().getYear() == year)
+        {
+            int month = data[i].getDate().getMonth();
+            totalWindSpeed[month - 1] += data[i].getWindSpeed();
+            totalAirTemp[month - 1] += data[i].getAirTemp();
+            count[month - 1]++;
+        }
+    }
+
+    for (int i = 0; i < 12; i++)
+    {
+        if (count[i] > 0)
+        {
+            double averageWindSpeed = totalWindSpeed[i] / count[i];
+            double averageAirTemp = totalAirTemp[i] / count[i];
+
+            std::cout << "Average wind speed for " << i + 1 << "/" << year << ": " << averageWindSpeed << "\n";
+            std::cout << "Average air temperature for " << i + 1 << "/" << year << ": " << averageAirTemp << "\n";
+        }
+        else
+        {
+            std::cout << "No data for " << i + 1 << "/" << year << ".\n";
+        }
+    }
 }
 
 void calculateTotalSolarRadiationForYear(const Vector<WindLog>& data)
