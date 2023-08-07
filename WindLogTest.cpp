@@ -5,8 +5,8 @@ using namespace std;
 
 int main() {
     // create a WindLog object
-    WindLog wl(Date(2022, 10, 1), Time(12, 30, 0), 10.5, 200.0, 25.0);
-
+    WindLog wl(Date(2022, 10, 1), Time(12, 30), 10.5, 200.0, 25.0);
+    wl.setTime(Time(13, 30));
     // test getter methods
     cout << "Date: " << wl.getDate() << endl;
     cout << "Time: " << wl.getTime() << endl;

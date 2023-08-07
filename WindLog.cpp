@@ -62,13 +62,20 @@ void WindLog::setAirTemp(double at)
 // overloading the << operator
 std::ostream &operator<<(std::ostream &os, const WindLog &wl)
 {
-    os << wl.date << " " << wl.time << " " << wl.windSpeed << " " << wl.solarRad << " " << wl.airTemp;
+    os << wl.getDate() << " " << wl.getTime() << " " << wl.getWindSpeed() << " " << wl.getSolarRad() << " " << wl.getAirTemp();
     return os;
 }
 
-// overloading the >> operator
 std::istream &operator>>(std::istream &is, WindLog &wl)
 {
-    is >> wl.date >> wl.time >> wl.windSpeed >> wl.solarRad >> wl.airTemp;
+    Date d;
+    Time t;
+    double ws, sr, at;
+    is >> d >> t >> ws >> sr >> at;
+    wl.setDate(d);
+    wl.setTime(t);
+    wl.setWindSpeed(ws);
+    wl.setSolarRad(sr);
+    wl.setAirTemp(at);
     return is;
 }
