@@ -9,10 +9,23 @@ void calculateTotalSolarRadiationForYear(const Vector<WindLog>& data);
 void calculateAverageAndWriteToFile(const Vector<WindLog>& data);
 void convertUnits(WindLog& log);
 
+#include <fstream>
+
 int main()
 {
     DataLoader loader;
-    Vector<WindLog> data = loader.loadData("path/to/your/csv/file.csv");
+    Vector<WindLog> data;
+
+    std::ifstream inFile("met_index.txt");
+    std::string fileName;
+    while (std::getline(inFile, fileName))
+    {
+        Vector<WindLog> fileData = loader.loadData("Data/" + fileName);
+        for (int i = 0; i < fileData.Size(); i++)
+        {
+            data.PushBack(fileData[i]);
+        }
+    }
 
     int option;
     do
