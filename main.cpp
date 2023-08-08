@@ -150,12 +150,83 @@ void calculateAverageWindSpeedAndAirTempForYear(const Vector<WindLog>& data)
 
 void calculateTotalSolarRadiationForYear(const Vector<WindLog>& data)
 {
-    // TODO: Implement this function
+    int year;
+    std::cout << "Enter year: ";
+    std::cin >> year;
+
+    double totalSolarRad[12] = {0.0};
+    int count[12] = {0};
+
+    for (int i = 0; i < data.Size(); i++)
+    {
+        if (data[i].getDate().getYear() == year && data[i].getSolarRad() >= 100)
+        {
+            int month = data[i].getDate().getMonth();
+            totalSolarRad[month - 1] += data[i].getSolarRad();
+            count[month - 1]++;
+        }
+    }
+
+    for (int i = 0; i < 12; i++)
+    {
+        if (count[i] > 0)
+        {
+            std::cout << "Total solar radiation for " << i + 1 << "/" << year << ": " << totalSolarRad[i] << " kWh/m^2\n";
+        }
+        else
+        {
+            std::cout << "No data for " << i + 1 << "/" << year << ".\n";
+        }
+    }
 }
 
 void calculateAverageAndWriteToFile(const Vector<WindLog>& data)
 {
-    // TODO: Implement this function
+    int year;
+    std::cout << "Enter year: ";
+    std::cin >> year;
+
+    double totalWindSpeed[12] = {0.0};
+    double totalAirTemp[12] = {0.0};
+    double totalSolarRad[12] = {0.0};
+    int count[12] = {0};
+
+    for (int i = 0; i < data.Size(); i++)
+    {
+        if (data[i].getDate().getYear() == year)
+        {
+            int month = data[i].getDate().getMonth();
+            totalWindSpeed[month - 1] += data[i].getWindSpeed();
+            totalAirTemp[month - 1] += data[i].getAirTemp();
+            if (data[i].getSolarRad() >= 100)
+            {
+                totalSolarRad[month - 1] += data[i].getSolarRad();
+            }
+            count[month - 1]++;
+        }
+    }
+
+    std::ofstream outFile("averages.txt");
+
+    for (int i = 0; i < 12; i++)
+    {
+        if (count[i] > 0)
+        {
+            double averageWindSpeed = totalWindSpeed[i] / count[i];
+            double averageAirTemp = totalAirTemp[i] / count[i];
+            double averageSolarRad = totalSolarRad[i] / count[i];
+
+            outFile << "Average wind speed for " << i + 1 << "/" << year << ": " << averageWindSpeed << "\n";
+            outFile << "Average air temperature for " << i + 1 << "/" << year << ": " << averageAirTemp << "\n";
+            outFile << "Average solar radiation for " << i + 1 << "/" << year << ": " << averageSolarRad << " kWh/m^2\n";
+        }
+        else
+        {
+            outFile << "No data for " << i + 1 << "/" << year << ".\n";
+        }
+    }
+
+    outFile.close();
 }
 
 void convertUnits(WindLog& log)
