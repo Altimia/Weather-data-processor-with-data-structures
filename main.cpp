@@ -1,4 +1,6 @@
 #include <iostream>
+#include "Vector.h"
+#include "WindLog.h"
 
 void displayMenu();
 void handleMenuOption(int option, const Vector<WindLog>& data);
