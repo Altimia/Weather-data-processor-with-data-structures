@@ -23,6 +23,7 @@ public:
     void setDay(int d);
     void setMonth(int m);
     void setYear(int y);
+    static Date fromString(const std::string& s);
 
 };
 // input and output operators

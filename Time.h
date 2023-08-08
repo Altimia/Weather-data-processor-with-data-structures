@@ -17,6 +17,7 @@ public:
     int getMinute() const;
     void setHour(int h);
     void setMinute(int m);
+    static Time fromString(const std::string& s);
 };
 
 // Overloaded input stream operator for Time class
