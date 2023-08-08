@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Vector.h"
 #include "WindLog.h"
+#include <fstream>
+#include <sstream>
 
 void displayMenu();
 void handleMenuOption(int option, const Vector<WindLog>& data);
@@ -9,8 +11,7 @@ void calculateAverageWindSpeedAndAirTempForYear(const Vector<WindLog>& data);
 void calculateTotalSolarRadiationForYear(const Vector<WindLog>& data);
 void calculateAverageAndWriteToFile(const Vector<WindLog>& data);
 void convertUnits(WindLog& log);
-#include <fstream>
-#include <sstream>
+
 
 Vector<WindLog> loadData(const std::string& filePath)
 {
@@ -36,7 +37,6 @@ Vector<WindLog> loadData(const std::string& filePath)
     }
     return data;
 }
-#include <fstream>
 
 int main()
 {

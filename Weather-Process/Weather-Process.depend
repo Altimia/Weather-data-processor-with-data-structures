@@ -6,13 +6,12 @@
 1691471615 c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\date.h
 	<iostream>
 
-1691471356 source:c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\main.cpp
+1691472448 source:c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\main.cpp
 	<iostream>
 	"Vector.h"
 	"WindLog.h"
 	<fstream>
 	<sstream>
-	<fstream>
 
 1691471662 source:c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\time.cpp
 	"Time.h"
@@ -50,4 +49,8 @@
 1690901390 c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\vector.h
 	<sstream>
 	<string>
+
+1691472610 source:c:\users\hecatia\documents\work\github\weather-data-processor-with-data-structures\vectortest.cpp
+	<iostream>
+	"Vector.h"
 

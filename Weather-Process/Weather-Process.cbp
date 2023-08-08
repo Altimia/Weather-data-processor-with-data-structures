@@ -50,6 +50,10 @@
 		<Unit filename="../Vector.h">
 			<Option target="Release" />
 		</Unit>
+		<Unit filename="../VectorTest.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="../WindLog.cpp" />
 		<Unit filename="../WindLog.h">
 			<Option target="Release" />
