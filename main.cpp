@@ -231,5 +231,9 @@ void calculateAverageAndWriteToFile(const Vector<WindLog>& data)
 
 void convertUnits(WindLog& log)
 {
-    // TODO: Implement this function
+    double windSpeedKmh = log.getWindSpeed() * 3.6;
+    log.setWindSpeed(windSpeedKmh);
+
+    double solarRadKwh = log.getSolarRad() / 1000;
+    log.setSolarRad(solarRadKwh);
 }
