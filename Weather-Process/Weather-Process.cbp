@@ -31,10 +31,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../Date.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
+		<Unit filename="../Date.cpp" />
 		<Unit filename="../Date.h">
 			<Option target="Release" />
 		</Unit>
@@ -42,10 +39,7 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="../Time.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
+		<Unit filename="../Time.cpp" />
 		<Unit filename="../Time.h">
 			<Option target="Release" />
 		</Unit>
