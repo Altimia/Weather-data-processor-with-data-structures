@@ -1,4 +1,5 @@
 #include "Date.h"
+#include <sstream>
 
 // default constructor
 Date::Date()

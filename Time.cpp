@@ -1,4 +1,5 @@
 #include "Time.h"
+#include <sstream>
 
 // Default constructor
 Time::Time()
