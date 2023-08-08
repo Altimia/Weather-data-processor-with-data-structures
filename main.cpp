@@ -1,5 +1,4 @@
 #include <iostream>
-#include "DataLoader.h"
 
 void displayMenu();
 void handleMenuOption(int option, const Vector<WindLog>& data);
@@ -8,19 +7,20 @@ void calculateAverageWindSpeedAndAirTempForYear(const Vector<WindLog>& data);
 void calculateTotalSolarRadiationForYear(const Vector<WindLog>& data);
 void calculateAverageAndWriteToFile(const Vector<WindLog>& data);
 void convertUnits(WindLog& log);
+Vector<WindLog> loadData(const std::string& filePath);
 
 #include <fstream>
 
 int main()
 {
-    DataLoader loader;
+    // DataLoader removed
     Vector<WindLog> data;
 
     std::ifstream inFile("met_index.txt");
     std::string fileName;
     while (std::getline(inFile, fileName))
     {
-        Vector<WindLog> fileData = loader.loadData("Data/" + fileName);
+        Vector<WindLog> fileData = loadData("Data/" + fileName);
         for (int i = 0; i < fileData.Size(); i++)
         {
             data.PushBack(fileData[i]);
