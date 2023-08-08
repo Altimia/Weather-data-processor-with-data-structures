@@ -54,11 +54,11 @@
 		<Unit filename="../WindLog.h">
 			<Option target="Release" />
 		</Unit>
-		<Unit filename="../WindLogTest.cpp" />
-		<Unit filename="../main.cpp">
+		<Unit filename="../WindLogTest.cpp">
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
+		<Unit filename="../main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
