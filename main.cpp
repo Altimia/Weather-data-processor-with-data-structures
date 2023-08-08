@@ -7,8 +7,33 @@ void calculateAverageWindSpeedAndAirTempForYear(const Vector<WindLog>& data);
 void calculateTotalSolarRadiationForYear(const Vector<WindLog>& data);
 void calculateAverageAndWriteToFile(const Vector<WindLog>& data);
 void convertUnits(WindLog& log);
-Vector<WindLog> loadData(const std::string& filePath);
+#include <fstream>
+#include <sstream>
 
+Vector<WindLog> loadData(const std::string& filePath)
+{
+    Vector<WindLog> data;
+    std::ifstream inFile(filePath);
+    std::string line;
+    while (std::getline(inFile, line))
+    {
+        std::istringstream ss(line);
+        std::string field;
+        std::getline(ss, field, ',');
+        Date date = Date::fromString(field);
+        std::getline(ss, field, ',');
+        Time time = Time::fromString(field);
+        std::getline(ss, field, ',');
+        double windSpeed = std::stod(field);
+        std::getline(ss, field, ',');
+        double solarRad = std::stod(field);
+        std::getline(ss, field, ',');
+        double airTemp = std::stod(field);
+        WindLog log(date, time, windSpeed, solarRad, airTemp);
+        data.PushBack(log);
+    }
+    return data;
+}
 #include <fstream>
 
 int main()
