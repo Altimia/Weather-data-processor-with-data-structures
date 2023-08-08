@@ -67,6 +67,15 @@ std::istream& operator>>(std::istream& is, Time& t)
     return is;
 }
 
+// fromString function
+Time Time::fromString(const std::string& s)
+{
+    std::istringstream is(s);
+    Time t;
+    is >> t;
+    return t;
+}
+
 // Overloaded output stream operator
 std::ostream& operator<<(std::ostream& os, const Time& t)
 {

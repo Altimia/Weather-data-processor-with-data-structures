@@ -69,3 +69,12 @@ std::istream& operator>>(std::istream& in, Date& date)
     }
     return in;
 }
+
+// fromString function
+Date Date::fromString(const std::string& s)
+{
+    std::istringstream is(s);
+    Date d;
+    is >> d;
+    return d;
+}
